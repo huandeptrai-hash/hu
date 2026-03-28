@@ -1,0 +1,280 @@
+/* Font & Reset */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f6f7;
+    color: #333;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: transparent;
+    display: flex;
+
+    justify-content: flex-start;
+    align-items: center;
+    padding: 15px 50px;
+    gap: 40px;
+    /* Khoảng cách giữa Logo và Menu */
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+header.scrolled {
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0077b6;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #f4f6f7;
+    font-weight: 500;
+}
+
+.hamburger {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+
+/* Vùng đầu giới thiệu đầu trang*/
+#hero {
+    background-image: linear-gradient(rgba(44, 44, 44, 0.5), rgba(0, 0, 0, 0.5)),
+        url('../Source/FARMING.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.hero-content {
+    text-align: center;
+    color: #fff;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.search-bar input,
+.search-bar button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.search-bar button {
+    background: #ffb703;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Trending */
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.section-header {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.section-header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+.grid-trending {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    /* Chia làm 6 cột để chia tỉ lệ */
+    gap: 15px;
+}
+
+.card {
+    position: relative;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.card.tall {
+    grid-column: span 3;
+    height: 300px;
+}
+
+.card:not(.tall) {
+    grid-column: span 2;
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, transparent 40%);
+    padding: 20px;
+}
+
+.card-overlay h3 {
+    color: white;
+    margin: 0;
+    font-size: 1.4rem;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/*định dạng các thẻ*/
+.card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    background-color: #f0f0f0;
+    /* Nền xám nhẹ khi ảnh chưa load */
+}
+
+/* 2 ảnh lớn ở hàng đầu */
+.card.tall {
+    grid-column: span 3;
+    height: 300px;
+}
+
+/* 3 ảnh nhỏ ở hàng sau */
+.card:not(.tall) {
+    grid-column: span 2;
+    height: 250px;
+}
+
+/* Xử lý ảnh căn giữa và đầy đủ */
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+/* Lớp phủ chữ trắng lên ảnh */
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, transparent 50%);
+    padding: 20px;
+    z-index: 2;
+}
+
+.card-overlay h3 {
+    color: white;
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Hiệu ứng khi di chuột vào: Chỉ phóng to ảnh bên trong, không nhảy cả khung */
+.card:hover .card-img {
+    transform: scale(1.1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Footer */
+footer {
+    background: #0077b6;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+footer .social a {
+    color: #ffb703;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.newsletter input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.newsletter button {
+    padding: 10px;
+    background: #ffb703;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav ul {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav ul.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
